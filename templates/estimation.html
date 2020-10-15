@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<div class="container-fluid estimation">
+    <h3>Preliminari būsto kaina:</h3>
+    <div class="estimation-value">
+        <div style="padding-top: 125px; padding-bottom: 180px;">
+            <h1>{{ est }}</h1>
+        </div>
+    <div class="back-btn">
+        <form action="/">
+                <input type="submit" class="btn btn-primary btn-block" value="Grįžti atgal" />
+        </form>
+    </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

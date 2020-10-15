@@ -1,0 +1,55 @@
+html, body {
+    height: 100%;
+}
+
+#address-search {
+    box-sizing: inherit!important;
+}
+
+.navbar-light .navbar-brand {
+    font-size: 30px;
+}
+.navbar {
+    font-size:30px;
+}
+
+body {
+ background-image: linear-gradient(to bottom, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 100%), url("/static/vilnius.jpg");
+ background-color: #cccccc;
+ background-size: cover;
+}
+
+form {
+    "display: flex;"
+    width: 100%;
+}
+
+.error {
+    background-color: #ff9d9d;
+}
+
+.success {
+    background-color: #82fb96;
+}
+
+.estimation {
+    height: 500px;
+    position: relative;
+}
+
+.estimation h3 {
+    text-align: center;
+}
+
+.estimation-value {
+    width: 25%;
+    margin: auto;
+}
+
+.container-fluid {
+    background-color: #e6e6e69c;
+    padding-top: 15px;
+}
+
+.back-btn {
+}

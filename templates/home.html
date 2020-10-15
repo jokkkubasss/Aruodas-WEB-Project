@@ -1,0 +1,158 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<div align="center" class="mx-auto align-middle pt-3" style="margin-bottom:15px;">
+    <h1>Nustatykite Vilniaus nekilnojamo turto vertę</h1>
+</div>
+
+<div class="container-fluid" >
+
+    <div class="form-group" style="margin-bottom: 15px;">
+    <form class="needs-validation" action="/estimation" method="post" novalidate>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <h5>1. Pasirinkite būsto lokaciją </h5>
+                <div id="myMap" style="height:350px; margin-bottom:15px;">
+                </div>
+                <div class="form-group mb-3" id='address-search-container'>
+                    <label for="address-search">Adresas</label>
+                    <input id="address-search" name="address" type="text" class="form-control" placeholder="Rašykite adresą" required>
+                    <small id="passwordHelpBlock" class="form-text text-muted">
+                        Pradėkite rašyti adresą, ir pasirinkite iš sąrašo
+                    </small>
+                </div>
+            </div>
+
+            <div class="col-lg-6" style="margin-bottom: 15px;">
+                <h5>2. Įveskite būsto informaciją:</h5>
+
+
+
+                <div class="form-group mb-3">
+                    <div class="col-lg-6">
+                        <input id="lon" name="lon" type="hidden" class="form-control" placeholder="Longitude">
+                    </div>
+                    <div class="col-lg-6">
+                        <input id="lat" name="lat" type="hidden" class="form-control" placeholder="Latitude">
+                    </div>
+                </div>
+
+
+                <div class="form-group mb-3">
+                    <label for="area">Plotas (m2)</label>
+                    <input id="area" name="area" type="number" onkeydown="return event.keyCode !== 69 && event.keyCode !== 189" class="form-control" placeholder="Įrašykite" required>
+                </div>
+
+
+                <div class="form-group mb-3">
+                    <label for="year">Statybos metai</label>
+                    <input id="year" name="year" type="number" onkeydown="return event.keyCode !== 69 && event.keyCode !== 189"  class="form-control" placeholder="Įrašykite" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group mb-3 col-md-6">
+                        <label for="floor_n">Aukštas</label>
+                        <select id='floor_n' class="custom-select" name="floor_n" required>
+                            <option value="">Pasirinkite</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group mb-3 col-md-6">
+                        <label for="floor_total">Iš viso aukštų</label>
+                        <select id="floor_total" class="custom-select" name="floor_total" required>
+                            <option value="">Pasirinkite</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="room_n">Kambarių skaičius</label>
+                    <select id="room_n" class="custom-select" name="room_n" required>
+                        <option value="">Pasirinkite</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10+</option>
+
+                    </select>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="heating_type">Šildymo tipas</label>
+                    <select id="heating_type" class="custom-select" name="heating_type" required>
+                        <option value="">Pasirinkite</option>
+                        <option value='aeroterminis'>Aeroterminis</option>
+                        <option value='centrinis kolektorinis'>Centrinis kolektorinis</option>
+                        <option value='centrinis'>Centrinis</option>
+                        <option value='dujinis'>Dujinis</option>
+                        <option value='elektra'>Elektra</option>
+                        <option value='geoterminis'>Geoterminis</option>
+                        <option value='kietu kuru'>Kietu kuru</option>
+                        <option value='kita'>Kita</option>
+                    </select>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="building_type">Pastato statybos tipas</label>
+                    <select id="building_type" class="custom-select" name="building_type" required>
+                        <option value="">Pasirinkite</option>
+                        <option value="Blokinis">Blokinis</option>
+                        <option value="Karkasinis">Karkasinis</option>
+                        <option value="Medinis">Medinis</option>
+                        <option value="Monolitinis">Monolitinis</option>
+                        <option value="Mūrinis">Mūrinis</option>
+                        <option value="Rąstinis">Rąstinis</option>
+                        <option value="Kita">Kita</option>
+                    </select>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="row">
+            <div style="margin:auto; margin-bottom:15px;">
+                    <button class="btn btn-primary btn-block" type="submit" id="button-addon2">Gauti informaciją apie kainą</button>
+            </div>
+        </div>
+    </form>
+    </div>
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AoZmn_WW-tlA3ZtaEm-LBh6D1z3TdYsEWFftmKo2cIOusOJqciOTur8k1uFLdaYr' async defer></script>
+    <script src="{{ url_for('static', filename='js/myscripts.js') }}"></script>
+{% endblock %}
+
+
