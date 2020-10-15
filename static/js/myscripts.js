@@ -1,4 +1,4 @@
-let api_key = 'AoZmn_WW-tlA3ZtaEm-LBh6D1z3TdYsEWFftmKo2cIOusOJqciOTur8k1uFLdaYr'
+let api_key = 'API_KEY'
 var map, searchManager;
 
 function GetMap() {
